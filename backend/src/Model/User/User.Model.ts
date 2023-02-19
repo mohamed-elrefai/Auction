@@ -25,6 +25,7 @@ export interface Organization extends UserInterface {
 }
 
 export interface UserDocument extends Organization, Client, Document {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     toJSON: () => any // any for now
 }
 
@@ -81,7 +82,9 @@ export const UserModel = model('user', UserSchema)
 
 
 // Functions
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function toJSON(this: any) {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const user = this
     const userObject = user.toObject()
     delete userObject.password
