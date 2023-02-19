@@ -49,6 +49,7 @@ export const UserSchema: Schema<UserInterface> = new Schema({
         type: String,
         required: true,
         uppercase: true,
+        trim: true,
     },
     email: {
         type: String,
@@ -59,7 +60,7 @@ export const UserSchema: Schema<UserInterface> = new Schema({
     password: {
         type: String,
         required: true,
-        min: 6,
+        minlength: 6,
     },
     profilePicture: {
         type: String,
@@ -71,7 +72,6 @@ export const UserSchema: Schema<UserInterface> = new Schema({
     },
     token: {
         type: String,
-        required: true,
     },
 }, {
     timestamps: true,
