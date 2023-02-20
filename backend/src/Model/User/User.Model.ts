@@ -1,6 +1,5 @@
 // Imports
-import { Schema, model, Model, Document } from 'mongoose'
-
+import { Schema, model, Document } from 'mongoose'
 
 // Interfaces
 export interface UserInterface {
@@ -28,11 +27,6 @@ export interface UserDocument extends Organization, Client, Document {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     toJSON: () => any // any for now
 }
-
-export interface AccountModel extends Model<UserDocument> {
-    findByCredentials(email: string, password: string): Promise<UserDocument>
-}
-
 
 // Schema
 export const UserSchema: Schema<UserInterface> = new Schema({
@@ -79,7 +73,6 @@ export const UserSchema: Schema<UserInterface> = new Schema({
 })
 
 export const UserModel = model('user', UserSchema)
-
 
 // Functions
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
