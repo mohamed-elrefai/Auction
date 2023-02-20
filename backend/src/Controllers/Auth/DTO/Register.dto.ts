@@ -3,6 +3,9 @@ import { IsString, IsNumber, IsArray } from 'class-validator'
 export class RegisterDTO {
 
     @IsString()
+    public type: string
+
+    @IsString()
     public fName: string
 
     @IsString()

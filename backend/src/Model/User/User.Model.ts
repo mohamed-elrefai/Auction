@@ -49,7 +49,7 @@ export const UserSchema: Schema<UserInterface> = new Schema({
     username: {
         type: String,
         required: true,
-        uppercase: true,
+        lowercase: true,
         trim: true,
     },
     email: {
