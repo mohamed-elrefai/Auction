@@ -1,14 +1,21 @@
-
+import { Request, Respose, NextFunction  } from 'express'
+import { UserModel } from '../../Model/User/User.Model'
+import bcrypt from 'bcryptjs'
 
 export const RegisterController = async () => {
 
-    // Data
+    try {
+        // Data
 
-    // username
+        // username
 
-    // Hash Password
+        // Hash Password
 
-    // Check User Type
+        // Check User Type
 
-    // Save Data
+        // Save Data    
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
