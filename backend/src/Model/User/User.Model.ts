@@ -10,7 +10,7 @@ export interface UserInterface {
     password: string
     profilePicture: string
     phoneNumber: string
-    token?: string
+    token: string
 }
 
 export interface Client extends UserInterface {

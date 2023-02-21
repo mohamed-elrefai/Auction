@@ -11,3 +11,7 @@ MongoUtils(app)
 SetupsUtils(app)
 
 indexHooks(app)
+
+app.get('/', (_req, res) => {
+    res.status(200).json({ success: 'haha' })
+})
