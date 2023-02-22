@@ -14,6 +14,11 @@ export interface ProductsInterFace {
     NumberOfRoom: number
 }
 
+export interface ProductDocument extends ProductsInterFace, Document {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    toJSON: () => any // any for now
+}
+
 // Schema
 const ProductSchema: Schema<ProductsInterFace> = new Schema({
     Owner:{
@@ -49,4 +54,13 @@ const ProductSchema: Schema<ProductsInterFace> = new Schema({
 })
 
 // Function
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function toJSON(this: any) {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const product = this
+    const productObject = product.toObject()
+    delete productObject.__v
+    return productObject
+}
 
+ProductSchema.methods.toJSON = toJSON
