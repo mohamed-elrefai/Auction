@@ -10,7 +10,7 @@ export interface ProductsInterFace {
     ProductCost: number
     isAuction: boolean
     isStore: boolean
-    ImageUrl: object[]
+    ImageUrl: [string]
     NumberOfRoom: number
 }
 
@@ -20,6 +20,9 @@ export interface ProductDocument extends ProductsInterFace, Document {
 }
 
 // Schema
+
+
+
 const ProductSchema: Schema<ProductsInterFace> = new Schema({
     Owner: {
         type: Schema.Types.ObjectId,
@@ -54,19 +57,12 @@ const ProductSchema: Schema<ProductsInterFace> = new Schema({
         default: false,
     },
     ImageUrl: {
-        type: [{
-            image: {
-                type: String,
-                trim: true,
-                required: true,
-            },
-        }],
-        default: [],
-        required: true,
+        type: [String],
+        default:[],
     },
     NumberOfRoom: {
         type: Number,
-        max: 3,
+        max: 4,
         min: 1,
         required: true,
     },
