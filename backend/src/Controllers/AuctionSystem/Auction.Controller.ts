@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { UserModel } from './../../Model/User/User.Model'
 import { Request, Response, NextFunction } from 'express'
 import { RoomsModel } from '../../Model/Rooms/Rooms.model'
 import { ProductModel } from '../../Model/Products/Products'
 import { PrivetArea } from '../../Functions/System/Area/Systems'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const AddUserAuctionsController = async (req: Request | any, res: Response, next: NextFunction) => {
     try {
         const userId = req.user._id
@@ -33,13 +31,11 @@ export const AddUserAuctionsController = async (req: Request | any, res: Respons
 
         next()
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     catch (err: any) {
         res.status(500).json({ message: err.message })
     }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const AuctionsController = async (req: Request | any, res: Response, next: NextFunction) => {
     try {
 
@@ -76,7 +72,6 @@ export const AuctionsController = async (req: Request | any, res: Response, next
 
         next()
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     catch (err: any) {
         res.status(500).json({ message: err.message })
     }

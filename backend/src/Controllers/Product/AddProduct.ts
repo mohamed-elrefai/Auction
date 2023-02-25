@@ -4,7 +4,6 @@ import { RoomsModel } from '../../Model/Rooms/Rooms.model'
 import { cloudinaryImageUploadMethod } from '../../Functions/Upload/Cloudinary'
 import { ProductDTO } from './DTO/AddProduct.dto'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const AddProductsController = async (req: Request | any, res: Response, next: NextFunction) => {
     try {
         if (req.user.__t === 'Organization') {
@@ -15,7 +14,6 @@ export const AddProductsController = async (req: Request | any, res: Response, n
             // Image Handel
             const urls = []
 
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             let files: any
             // eslint-disable-next-line prefer-const
             files = req.files
@@ -53,7 +51,6 @@ export const AddProductsController = async (req: Request | any, res: Response, n
         }
         next()
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     catch (err: any) {
         res.status(500).json({ message: err.message })
     }

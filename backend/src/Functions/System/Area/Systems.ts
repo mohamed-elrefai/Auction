@@ -1,7 +1,6 @@
 /* eslint-disable prefer-const */
 import { RoomsModel } from '../../../Model/Rooms/Rooms.model'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function PrivetArea(RoomId: any, NewCost: number): Promise<void> {
     let userWin = ''
     let WinCost = 0

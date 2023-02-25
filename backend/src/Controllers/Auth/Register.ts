@@ -50,7 +50,6 @@ export const RegisterController = async (req: Request, res: Response, next: Next
         }
         next()
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     catch (err: any) {
         res.status(500).json({ message: err.message })
     }
