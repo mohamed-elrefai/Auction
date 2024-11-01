@@ -1,6 +1,7 @@
 # package directories
 node_modules
 jspm_packages
+package-lock.json
 
 # Serverless directories
 .serverless
@@ -76,7 +77,6 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -86,7 +86,7 @@ typings/
 .next
 
 # Nuxt.js build / generate output
-.nuxt
+.nuxts
 dist
 
 # Gatsby files
@@ -114,9 +114,6 @@ dist
 .build
 .dist
 .bin
-build
-dist
-bin
-Frontend
-Privet.key
-uploads
+test
+.vscode
+.env
